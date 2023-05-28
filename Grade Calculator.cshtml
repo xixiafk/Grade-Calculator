@@ -1,0 +1,74 @@
+﻿/*
+ * Created by SharpDevelop.
+ * User: User
+ * Date: 28/05/2023
+ * Time: 9:07 pm
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Grades_Calculator
+{
+	/// <summary>
+	/// Description of MainForm.
+	/// </summary>
+	public partial class MainForm : Form
+	{
+		public MainForm()
+		{
+			//
+			// The InitializeComponent() call is required for Windows Forms designer support.
+			//
+			InitializeComponent();
+			
+			//
+			// TODO: Add constructor code after the InitializeComponent() call.
+			//
+		}
+		
+		void MainFormLoad(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void LoginbtnClick(object sender, EventArgs e)
+		{
+			string a, b, user, pass;
+			a = "omg";
+			b = "ohno";
+			
+			user = Convert.ToString(usernametxt.Text);
+			pass = Convert.ToString(passwordtxt.Text);
+			
+			if (user == a && pass == b )
+			{
+				this.Hide();
+				Form1 f1 = new Form1();
+				f1.ShowDialog();
+			}
+			else if (user == a && pass != b)
+			{
+				MessageBox.Show("Wrong password. Try again.");
+			}
+			else if (user != a && pass == b)
+			{
+				MessageBox.Show("Wrong username. Try again.");
+			}
+			else if (user != a && pass != b)
+			{
+				MessageBox.Show("Account not foud. Create a new one");
+			}
+		}
+		
+		void LinkLabel1LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			this.Hide();
+			Form2 f2 = new Form2();
+			f2.ShowDialog();
+		}
+	}
+}
